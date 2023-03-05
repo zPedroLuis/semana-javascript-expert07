@@ -1,0 +1,9 @@
+class01->
+    assets->
+        database.json -> Banco de dados do projeto
+        demo-template-lg.gif -> Demonstração 
+        video.mp4 -> Vídeo padrão em todos os filmes 
+    pages-> 
+        titles-> 
+            lib-> 
+            index.html -> Tem o script type="module" que importa o database.json sem utilizar um backend
