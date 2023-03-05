@@ -2,7 +2,7 @@ export default class CardService {
   #database = []
   #dbUrl = ''
   #cardListWorker
-  constructor({ dbUrl, cardListWorker }) {
+  constructor({ dbUrl, cardListWorker}) {
     this.#dbUrl = dbUrl
     this.#cardListWorker = cardListWorker
   }
@@ -14,11 +14,10 @@ export default class CardService {
   filterTitles(keyword) {
     const titles = this.#database
       .filter(({ title }) => !!keyword ? title.toLowerCase().includes(keyword.toLowerCase()) : true)
-
-    if(keyword) {
-      this.#cardListWorker.postMessage({ maxItems: 1e5 }) 
+    
+    if(keyword){
+      this.#cardListWorker.postMessage({ maxItems: 1e5 })
     }
-
     const cards = titles.map(item => {
       return {
         background: item.imageUrl,
